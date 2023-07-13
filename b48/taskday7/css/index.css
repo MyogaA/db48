@@ -16,7 +16,7 @@ li {
 
 li a {
     display: block;
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px 20px;
     text-decoration: none;
@@ -232,6 +232,11 @@ li a:hover:not(.active) {
     .humberger-nav li button:hover {
         background-color: #032A3B;
     }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        padding: 5px;
+    }
 }
 
 /* Tablet  */
@@ -260,6 +265,11 @@ li a:hover:not(.active) {
     .toggle-button {
         display: none;
     }
+
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        padding: 10px;
+    }
 }
 
 /* Laptop  */
@@ -276,24 +286,4 @@ li a:hover:not(.active) {
     .humberger-nav {
         display: none;
     }
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* Three columns with equal width */
-    grid-gap: 10px;
-    padding: 10px;
-    /* Gap between grid items */
-}
-
-.grid-item {
-    padding: 20px;
-    background-color: #E5CDA7;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
-    width: 80%;
-    margin-left: 20px
-}
-.grid-item img {
-    width: 100%;
 }
