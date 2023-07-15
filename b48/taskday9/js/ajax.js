@@ -28,25 +28,25 @@ function filterRating (rating){
     })
     document.getElementById("grid-testi").innerHTML = filterInhtml
 }
-const promise = new Promise((resolve, reject) => {
+const promise = new Promise((berhasil, gagal) => {
     const xhr = new XMLHttpRequest()
 
     xhr.open("GET", "https://api.npoint.io/7daf4b796facc7155627", true)
     xhr.onload = function () {
         if (xhr.status === 200) {
-            resolve(JSON.parse(xhr.responseText))
+            berhasil(JSON.parse(xhr.responseText))
         } else if (xhr.status >= 400) {
-            reject("Error loading data")
+            gagal("Error loading data")
         }
     }
     xhr.onerror = function () {
-        reject("Network error")
+        gagal("Network error")
     }
     xhr.send()
 })
 let cardData = []
 
-async function getData(rating) {
+async function getData() {
     try {
         const response = await promise
         console.log(response)
